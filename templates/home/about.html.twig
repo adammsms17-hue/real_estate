@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>À propos - ImmoLoc</title>
+    <style>
+        /* === STYLES DE BASE === */
+        :root {
+            --primary: #3498db;
+            --secondary: #2c3e50;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #34495e;
+            --radius: 10px;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body.about-page {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.90)),
+                        url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            min-height: 100vh;
+        }
+        
+        /* === NAVBAR === */
+        .navbar {
+            background: rgba(44, 62, 80, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        .nav-links a:hover {
+            background: rgba(52, 152, 219, 0.5);
+        }
+        
+        /* === CONTENU === */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius);
+            padding: 3rem;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 2rem;
+        }
+        
+        h1, h2, h3 {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; color: var(--primary); }
+        h3 { font-size: 1.5rem; }
+        
+        p, li {
+            color: #34495e;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.8rem;
+        }
+        
+        /* === SECTIONS SPÉCIALES === */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .tech-item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            text-align: center;
+            border: 1px solid rgba(52, 152, 219, 0.3);
+            transition: transform 0.3s;
+        }
+        
+        .tech-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .code-block {
+            background: rgba(44, 62, 80, 0.9);
+            color: #ecf0f1;
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* === BOUTONS === */
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        
+        .btn:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        }
+        
+        /* === FOOTER === */
+        footer {
+            background: rgba(44, 62, 80, 0.95);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                width: 100%;
+            }
+            
+            .nav-links a {
+                margin: 0;
+                text-align: center;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+            
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.90)),
+            url('https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
+        }
+    </style>
+</head>
+<body class="about-page">
+    <nav class="navbar">
+        <div class="logo">🏠 ImmoLoc</div>
+        <div class="nav-links">
+            <a href="/">Accueil</a>
+            <a href="/property">Propriétés</a>
+            <a href="/about">À propos</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <h1>À propos de ImmoLoc</h1>
+            <p>ImmoLoc est une plateforme de location immobilière développée avec Symfony, conçue pour simplifier la recherche de logements au Maroc.</p>
+            
+            <h2>🚀 Notre Mission</h2>
+            <p>Connecter les propriétaires et les locataires à travers une plateforme moderne, intuitive et sécurisée.</p>
+            
+            <h2>💻 Technologies Utilisées</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <h3>Symfony 6.3</h3>
+                    <p>Framework PHP moderne</p>
+                </div>
+                <div class="tech-item">
+                    <h3>MySQL</h3>
+                    <p>Base de données relationnelle</p>
+                </div>
+                <div class="tech-item">
+                    <h3>Twig</h3>
+                    <p>Templates dynamiques</p>
+                </div>
+                <div class="tech-item">
+                    <h3>Git & GitHub</h3>
+                    <p>Contrôle de version</p>
+                </div>
+            </div>
+            
+            <h2>📁 Structure du Projet</h2>
+            <div class="code-block">
+real_estate/
+├── src/Controller/
+│   └── HomeController.php
+├── templates/
+│   └── home/
+│       ├── index.html.twig
+│       ├── property.html.twig
+│       └── about.html.twig
+├── public/
+├── config/
+└── database/
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="/" class="btn">← Retour à l'accueil</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Projet Symfony - Développement Web - Année 2024</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">© Tous droits réservés</p>
+    </footer>
+</body>
+</html>
